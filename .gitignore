@@ -1,0 +1,36 @@
+# Vivado / Verilog temporary build and log files
+*.jou
+*.log
+*.str
+*.zip
+*.html
+*.xml
+*.backup*
+*.tmp
+*.cache
+*.runs/
+*.sim/
+*.ip_user_files/
+*.Xil/
+.Xil/*
+*/.Xil/*
+*.sdk/
+*.xpr
+*.xise
+*.wdb
+*.ltx
+*.dcp
+*.rpt
+*.lso
+*.dat
+*.sdf
+*.prj
+*.tcl
+# Simulation waves
+*.vcd
+*.wcfg
+*.asdb
+*.vpd
+# OS / IDE
+*.DS_Store
+Thumbs.db
