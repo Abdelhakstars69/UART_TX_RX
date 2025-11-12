@@ -46,7 +46,7 @@ This phase integrated both **TX and RX** modules into a full **loopback communic
 The FPGA transmitted data via TX and simultaneously received it on RX, confirming proper synchronization and bit-level accuracy.  
 Loopback timing and 7-segment latched display validated the system’s reliability on real hardware.
 
-| Loopback Timing Simulation | Latched RX Display | Tera Term Console |
+| Loopback Timing Simulation | Latched RX Display | Console |
 |-----------------------------|--------------------|-------------------|
 | ![Loopback Timing](screenshots/p2_loopback_timing.png) | ![Latched RX Display](screenshots/p2_latched_rx_display.png) | ![RX Console Log](screenshots/p2_console_log.png) |
 
