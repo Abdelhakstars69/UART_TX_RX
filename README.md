@@ -27,11 +27,38 @@ The system performs reliable full-duplex serial communication between the FPGA a
 - **Tera Term Serial Monitor**  
 - **100 MHz on-board oscillator**
 
-## 📈 Results
-Achieved stable **full-duplex UART communication** verified via:
-- Simulation waveforms showing correct start, data, and stop bits  
-- Real serial data exchange between FPGA and PC using Tera Term  
-- Accurate hexadecimal display on the Basys-3 7-segment module  
+## 🧪 Results
+
+### Part 1 – UART Transmitter (TX)
+In this stage, the **UART TX** module was designed and simulated at 9600 bps (8N1).  
+The waveform shows correct **start bit → 8 data bits → stop bit** framing.  
+On the Basys-3 board, pressing **BTNL** triggered transmission and displayed the sent hex value on the 7-segment display.  
+Tera Term verified that the transmitted ASCII character (0x41 = ‘A’) was correctly received on the PC.
+
+| UART TX Frame Simulation | Basys-3 Display Snapshot | Console Output |
+|---------------------------|--------------------------|----------------|
+| ![UART Frame](screenshots/p1_uart_frame.png) | ![Display Snapshot](screenshots/p1_display_snapshot.png) | ![Console Log](screenshots/p1_console_log.png) |
+
+---
+
+### Part 2 – UART Transmitter + Receiver (TX/RX Loopback)
+This phase integrated both **TX and RX** modules into a full **loopback communication system**.  
+The FPGA transmitted data via TX and simultaneously received it on RX, confirming proper synchronization and bit-level accuracy.  
+Loopback timing and 7-segment latched display validated the system’s reliability on real hardware.
+
+| Loopback Timing Simulation | Latched RX Display | Tera Term Console |
+|-----------------------------|--------------------|-------------------|
+| ![Loopback Timing](screenshots/p2_loopback_timing.png) | ![Latched RX Display](screenshots/p2_latched_rx_display.png) | ![RX Console Log](screenshots/p2_console_log.png) |
+
+---
+
+### 📊 Observations
+- TX-only (Part 1) confirmed accurate serial frame generation.  
+- TX/RX loopback (Part 2) achieved stable full-duplex operation with zero bit errors.  
+- Baud-rate timing matched theoretical 9600 bps expectations.  
+
+✅ **Conclusion:** The UART TX/RX design achieved reliable full-duplex serial communication between the Basys-3 FPGA and PC, verified in both simulation and hardware loopback.
+
 
 ## 📡 Applications
 - Embedded system serial interfaces  
