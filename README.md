@@ -15,12 +15,11 @@ The system transmits and receives data through serial communication and displays
 | File | Description |
 |------|--------------|
 | `uart_tx.v` | Transmitter logic |
-| `uart_rx.v` | Receiver logic |
-| `uart_top.v` | Integration module |
+| `uart_txrx.v` | Receiver logic |
 | `tb_uart_tx.v` | TX Testbench |
 | `tb_uart_txrx.v` | RX Testbench |
-| `UART1.xdc` | Pin constraints |
-| `UART2.xdc` | Pin constraints |
+| `uart_tx.xdc` | Pin constraints |
+| `uart_txrx.xdc` | Pin constraints |
 
 ## Tools & Hardware
 Vivado 2023.2 · Basys-3 (Artix-7 xc7a35tcpg236-1)
