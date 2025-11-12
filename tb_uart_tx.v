@@ -36,14 +36,14 @@ end
 always #5 CLK100MHZ = ~CLK100MHZ;
 
 // --- UART timing (9600 baud) ---
-localparam integer BIT_NS   = 104_167;        // ~104.167 µs per bit
+localparam integer BIT_NS   = 104_167;        // ~104.167 Âµs per bit
 localparam integer FRAME_NS = 10*BIT_NS;      // start + 8 data + stop
 
 // Wider button pulse so it's visible in ms-scale waveform
 task press_btnL;
 begin
   btnL = 1;
-  #10_000;    // 10 µs high (easy to see)
+  #10_000;    // 10 Âµs high (easy to see)
   btnL = 0;
 end
 endtask
